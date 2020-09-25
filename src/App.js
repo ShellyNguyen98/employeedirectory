@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import 'react-table-6/react-table.css'
-import axios from 'axios'
-import ReactTable from 'react-table-6'
+import React, { useState, useEffect } from 'react';
+import 'react-table-6/react-table.css';
+import axios from 'axios';
+import ReactTable from 'react-table-6';
 
 
 const App = () =>  {
 
   const [employeeState, setEmployeeState] = useState ({
     employees: [],
-    comlums: [
+    columns: [
       {
         Header: 'Name',
         accessor: 'name',
@@ -23,8 +23,8 @@ const App = () =>  {
       },
       {
         Header: 'Country',
-        accessor: 'Country',
-      },
+        accessor: 'country',
+      }
     ]
   })
 
@@ -47,12 +47,16 @@ const App = () =>  {
   // eslint-disable-next-line
   }, [])
   return (
-    <ReactTable
-      data= {employeeState.employees}
-      comlums={employeeState.columes}
-    />
+    <>
+      <ReactTable
+        data={employeeState.employees}
+        columns={employeeState.columns}
+        
+      />
+    </>
   )
   
 }
 
 export default App;
+
